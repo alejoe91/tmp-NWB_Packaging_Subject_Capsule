@@ -42,7 +42,7 @@ def run():
     # Parse the command-line arguments
     args = parser.parse_args()
     backend = args.backend or args.static_backend
-    asset_name = args.asset_name or args.static_backend
+    asset_name = args.asset_name or args.static_asset_name
 
     print(f"Backend: {backend} -- Asset Name: {asset_name}")
 
