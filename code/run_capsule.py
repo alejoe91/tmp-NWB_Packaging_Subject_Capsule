@@ -11,8 +11,6 @@ from pynwb.file import Subject
 from hdmf_zarr import NWBZarrIO
 from uuid import uuid4
 
-from aind_data_access_api.document_db import MetadataDbClient
-
 DOC_DB_HOST = "api.allenneuraldynamics.org"
 DOC_DB_DATABASE = "metadata"
 DOC_DB_COLLECTION = "data_assets"
@@ -54,6 +52,8 @@ def run():
         raise ValueError(f"Unknown backend: {backend}")
 
     if asset_name is not None:
+        from aind_data_access_api.document_db import MetadataDbClient
+
         doc_db_client = MetadataDbClient(
             host=DOC_DB_HOST,
             database=DOC_DB_DATABASE,
