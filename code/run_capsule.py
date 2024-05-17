@@ -44,6 +44,8 @@ def run():
     backend = args.backend or args.static_backend
     asset_name = args.asset_name or args.static_backend
 
+    print(f"Backend: {backend} -- Asset Name: {asset_name}")
+
     if backend == "hdf5":
         io_class = NWBHDF5IO
     elif backend == "zarr":
